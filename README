@@ -1,1 +1,6 @@
 Criação de Backup de dados comprimidos com gzip.
+
+* Está salvando arrays serializados e comprimidos
+
+TO-DO
+- Refatorar o setDados para verificar se é String ou Array, se for Array, serializa, se for string, deixa como está. Criar identificador para definir o tipo do conteúdo comprimido ( String ou Array ).
