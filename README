@@ -19,12 +19,10 @@ Refatorado:
 CakePHP
 
 Instalação
-
     Copiar o arquivo cake/controller/components/backup.php para projeto/app/controller/components/backup.php
     Copiar os outros arquivos para projeto/app/vendors/backup/
 
 Usando
-
     No controller adicionar a propriedade:
         public $components = array( 'Backup' );
         
@@ -33,4 +31,3 @@ Usando
         $this->Backup->ler( ... )
         $this->Backup->zipa( ... )
         $this->Backup->dezipa( ... )
-
