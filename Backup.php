@@ -51,8 +51,9 @@
          */
         public function salva( array $dados, $destino, $nomeArquivo, $sobescrever = false )
         {
-            return $this->classeSalva->setDestino( $destino )
-                                     ->setDados( $dados, $nomeArquivo )
+            return $this->classeSalva->setDados( $dados )
+                                     ->setNomeArquivo( $nomeArquivo )
+                                     ->setDestino( $destino )
                                      ->salvaArquivo( $sobescrever );
         }
 

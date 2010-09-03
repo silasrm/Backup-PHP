@@ -4,7 +4,30 @@ Criação de Backup de dados comprimidos com gzip.
 
 Refatorado:
     :Sex 03 Set 2010 14:18:35 BRT 
-         - setDados agora é mixed
-         - setDados não recebe mais o nome do arquivo. Somente os dados.
-         - __construct agora recebe o nome do arquivo.
-         - __construct tem a ordem dos parâmetros trocadas para melhor leitura.
+        - setDados agora é mixed
+        - setDados não recebe mais o nome do arquivo. Somente os dados.
+        - __construct agora recebe o nome do arquivo.
+        - __construct tem a ordem dos parâmetros trocadas para melhor leitura.
+         
+    :Sex 03 Set 2010 14:33:35 BRT 
+        - Adicionado componente Backup para CakePHP que usa o Backup-PHP.
+        
+        
+CakePHP
+
+Instalação
+
+    Copiar o arquivo cake/controller/components/backup.php para projeto/app/controller/components/backup.php
+    Copiar os outros arquivos para projeto/app/vendors/backup/
+
+Usando
+
+    No controller adicionar a propriedade:
+        public $components = array( 'Backup' );
+        
+    Use assim:
+        $this->Backup->salva( ... )
+        $this->Backup->ler( ... )
+        $this->Backup->zipa( ... )
+        $this->Backup->dezipa( ... )
+
