@@ -1,5 +1,8 @@
 Criação de Backup de dados comprimidos com gzip.
 
+Autores: Silas Ribas Martins @silasribas <silasrm@gmail.com>
+         Hugo Henrique @hugohenrique <contato@hugohenrique.com.br>
+
 * Está salvando arrays serializados e comprimidos
 
 Refatorado:
