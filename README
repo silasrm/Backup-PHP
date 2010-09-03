@@ -2,5 +2,9 @@ Criação de Backup de dados comprimidos com gzip.
 
 * Está salvando arrays serializados e comprimidos
 
-TO-DO
-- Refatorar o setDados para verificar se é String ou Array, se for Array, serializa, se for string, deixa como está. Criar identificador para definir o tipo do conteúdo comprimido ( String ou Array ).
+Refatorado:
+    :Sex 03 Set 2010 14:18:35 BRT 
+         - setDados agora é mixed
+         - setDados não recebe mais o nome do arquivo. Somente os dados.
+         - __construct agora recebe o nome do arquivo.
+         - __construct tem a ordem dos parâmetros trocadas para melhor leitura.

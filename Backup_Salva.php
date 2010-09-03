@@ -29,17 +29,21 @@
 
         /**
          * Construtor podendo passar o destino e os dados na inicialização ou não
-         * @param string|null $destino
          * @param array $dados
+         * @param string|null $nomeArquivo
+         * @param string|null $destino
          * @return Backup_Salva 
          */
-        public function __construct( $destino = null, array $dados = array() )
+        public function __construct( array $dados = array(), $nomeArquivo = null, $destino = null )
         {
-            if( !empty( $destino ) )
-                $this->setDestino( $destino );
-
             if( !empty( $dados ) )
                 $this->setDados( $dados );
+
+            if( !empty( $nomeArquivo ) )
+                $this->setNomeArquivo( $nomeArquivo );
+                
+            if( !empty( $destino ) )
+                $this->setDestino( $destino );
 
             return $this;
         }
@@ -75,18 +79,16 @@
         }
 
         /**
-         * Seta o vetor com os dados a serem feito Backup, podendo passar o nome do arquivo a ser criado que conterá os dados
-         * @param array $dados
-         * @param string|null $nomeArquivo
+         * Seta o vetor com os dados a serem feito Backup.
+         * @param mixed $dados
          * @return Backup_Salva
          */
-        public function setDados( array $dados, $nomeArquivo = null )
+        public function setDados( $dados )
         {
-            if( is_array( $dados ) && empty( $dados ) )
-                throw new InvalidArgumentException( 'Formata dos dados incorreto. Não pode ser um (array) vazio' );
+            if( empty( $dados ) )
+                throw new InvalidArgumentException( 'Formata dos dados incorreto. Não pode ser vazio' );
 
             $this->dados = gzcompress( serialize( $dados ) );
-            $this->setNomeArquivo( $nomeArquivo );
 
             return $this;
         }
